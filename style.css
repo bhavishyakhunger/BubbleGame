@@ -265,6 +265,7 @@ button>i {
 
     .warning {
         display: flex;
+        padding: 5%;
         justify-content: center;
         align-items: center;
         background-color: #1c1e1e;
