@@ -32,6 +32,8 @@ function countdown(){
     }, 1000);
 }
 
+var hhssccrr = 0;
+    
 function runGame(){
     document.querySelector(".counter-page").style.display = "none";
     document.querySelector("#main").style.display = "flex";
@@ -54,6 +56,7 @@ for(var i = 1; i<=168; i++){
 document.querySelector("#pbtm").innerHTML = clutter;
 }
 function runTimer(){
+    document.querySelector("#timeinterval").style.color = "#2c3333";
     var rtimer = setInterval(function(){
         if (timer>0){
             timer--;
@@ -73,8 +76,18 @@ function runTimer(){
             document.querySelector("#pbtm>button").style.border = "none";
             document.querySelector("#pbtm>button").style.cursor = "pointer";
             document.querySelector("#pbtm>button").addEventListener("click", function(){
-                document.querySelector("#scoreval").textContent = 0;
-                runGame();
+                if (score>hhssccrr){
+                    hhssccrr = score;
+                    // score = 0;
+                    document.querySelector("#hscr").textContent = hhssccrr;
+                    document.querySelector("#scoreval").textContent = 0;
+                    runGame();
+                } else {
+                    // score = 0;
+                    document.querySelector("#scoreval").textContent = 0;
+                    runGame();
+                }
+                
             })
             
         }
@@ -99,4 +112,4 @@ clickAndPlay();
 runTimer();
 makeBubble();
 getNewHit();
-                                       }
+}
