@@ -247,11 +247,16 @@ button>i {
         display: none;
     }
 
+    .counter-page {
+        display: none;
+    ]
+
     .welcome {
         display: none;
     }
     
     .warning {
         display: flex;
+        flex-direction: column;
     }
   }
